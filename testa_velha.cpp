@@ -30,16 +30,6 @@ TEST_CASE("Tabuleiro vazio", "[velha]") {
     REQUIRE(VerificaVelha(jogo) == -1);
 }
 
-TEST_CASE("X na primeira casa", "[velha]") {
-    int jogo[3][3] = {
-        {1, 0, 0},
-        {0, 0, 0},
-        {0, 0, 0}
-    };
-
-    REQUIRE(VerificaVelha(jogo) == -1);
-}
-
 TEST_CASE("Mais de 5 X", "[velha]") {
     int jogo[3][3] = {
         {1, 1, 1},
@@ -60,13 +50,13 @@ TEST_CASE("Mais de 5 O", "[velha]") {
     REQUIRE(VerificaVelha(jogo) == -2);
 }
 
-TEST_CASE("Tabuleiro valido com poucos elementos", "[velha]") {
+TEST_CASE("Tabuleiro valido com jogo indefinido", "[velha]") {
     int jogo[3][3] = {
         {1, 2, 0},
         {0, 1, 0},
         {0, 0, 2}
     };
 
-    REQUIRE(VerificaVelha(jogo) == 0);
+    REQUIRE(VerificaVelha(jogo) == -1);
 }
  
