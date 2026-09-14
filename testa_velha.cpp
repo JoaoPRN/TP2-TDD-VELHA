@@ -18,6 +18,55 @@ TEST_CASE( "Testa velha", "[single-file]" ) {
 					  };
     REQUIRE( VerificaVelha(teste1) == 1 );
 
+}
 
-} 
+TEST_CASE("Tabuleiro vazio", "[velha]") {
+    int jogo[3][3] = {
+        {0, 0, 0},
+        {0, 0, 0},
+        {0, 0, 0}
+    };
+
+    REQUIRE(VerificaVelha(jogo) == -1);
+}
+
+TEST_CASE("X na primeira casa", "[velha]") {
+    int jogo[3][3] = {
+        {1, 0, 0},
+        {0, 0, 0},
+        {0, 0, 0}
+    };
+
+    REQUIRE(VerificaVelha(jogo) == -1);
+}
+
+TEST_CASE("Mais de 5 X", "[velha]") {
+    int jogo[3][3] = {
+        {1, 1, 1},
+        {1, 1, 1},
+        {0, 0, 0}
+    };
+
+    REQUIRE(VerificaVelha(jogo) == -2);
+}
+
+TEST_CASE("Mais de 5 O", "[velha]") {
+    int jogo[3][3] = {
+        {2, 2, 2},
+        {2, 2, 2},
+        {0, 0, 0}
+    };
+
+    REQUIRE(VerificaVelha(jogo) == -2);
+}
+
+TEST_CASE("Tabuleiro valido com poucos elementos", "[velha]") {
+    int jogo[3][3] = {
+        {1, 2, 0},
+        {0, 1, 0},
+        {0, 0, 2}
+    };
+
+    REQUIRE(VerificaVelha(jogo) == 0);
+}
  
