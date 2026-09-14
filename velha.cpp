@@ -42,6 +42,12 @@ int VerificaVelha( int velha[3][3] )
         }
     }
 
+	// vitória por coluna
+	for (int j = 0; j < 3; j++) {
+        if (velha[0][j] == 1 && velha[1][j] == 1 && velha[2][j] == 1) return 1;
+        if (velha[0][j] == 2 && velha[1][j] == 2 && velha[2][j] == 2) return 2;
+    }
+
 	// jogo ainda em andamento/indefinido
     return -1; 
 }
