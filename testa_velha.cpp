@@ -97,3 +97,21 @@ TEST_CASE("O vence na coluna", "[velha]") {
     };
     REQUIRE(VerificaVelha(jogo) == 2);
 }
+
+TEST_CASE("X vence na diagonal", "[velha]") {
+    int jogo[3][3] = {
+        {1, 0, 0},
+        {2, 1, 0},
+        {0, 2, 1}
+    };
+    REQUIRE(VerificaVelha(jogo) == 1);
+}
+
+TEST_CASE("O vence na diagonal", "[velha]") {
+    int jogo[3][3] = {
+        {2, 0, 0},
+        {1, 2, 0},
+        {0, 1, 2}
+    };
+    REQUIRE(VerificaVelha(jogo) == 2);
+}
