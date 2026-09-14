@@ -69,13 +69,11 @@ TEST_CASE("X vence na linha", "[velha]") {
     REQUIRE(VerificaVelha(jogo) == 1);
 }
 
-
-
 TEST_CASE("O vence na linha", "[velha]") {
     int jogo[3][3] = {
         {2, 2, 2},
         {1, 1, 0},
-        {0, 0, 0}
+        {0, 0, 1}
     };
     REQUIRE(VerificaVelha(jogo) == 2);
 }
@@ -93,7 +91,7 @@ TEST_CASE("O vence na coluna", "[velha]") {
     int jogo[3][3] = {
         {1, 2, 0},
         {1, 2, 0},
-        {0, 2, 0}
+        {0, 2, 1}
     };
     REQUIRE(VerificaVelha(jogo) == 2);
 }
@@ -110,8 +108,18 @@ TEST_CASE("X vence na diagonal", "[velha]") {
 TEST_CASE("O vence na diagonal", "[velha]") {
     int jogo[3][3] = {
         {2, 0, 0},
-        {1, 2, 0},
+        {1, 2, 1},
         {0, 1, 2}
     };
     REQUIRE(VerificaVelha(jogo) == 2);
+}
+
+TEST_CASE("X e O nao alternam", "[velha]") {
+    int jogo[3][3] = {
+        {1, 1, 0},
+        {0, 2, 0},
+        {0, 0, 1}
+    };
+
+    REQUIRE(VerificaVelha(jogo) == -2);
 }
