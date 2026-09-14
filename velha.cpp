@@ -28,10 +28,22 @@ int VerificaVelha( int velha[3][3] )
         }
     }
 
+	
     if (count_vazio == 9) return -1;
     if (count_x > 5 || count_o > 5) return -2;
+	
+	// vitória por linha
+	for (int i = 0; i < 3; i++) {
+        if (velha[i][0] == 1 && velha[i][1] == 1 && velha[i][2] == 1) {
+            return 1; // X venceu
+        }
+        if (velha[i][0] == 2 && velha[i][1] == 2 && velha[i][2] == 2) {
+            return 2; // O venceu
+        }
+    }
 
-    return 0; 
+	// jogo ainda em andamento/indefinido
+    return -1; 
 }
 
 
