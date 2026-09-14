@@ -31,6 +31,9 @@ int VerificaVelha( int velha[3][3] )
 	
     if (count_vazio == 9) return -1;
     if (count_x > 5 || count_o > 5) return -2;
+
+	// regra de alternância: X começa
+    if (count_x > count_o + 1 || count_o > count_x) return -2;
 	
 	// vitória por linha
 	for (int i = 0; i < 3; i++) {
