@@ -59,4 +59,21 @@ TEST_CASE("Tabuleiro valido com jogo indefinido", "[velha]") {
 
     REQUIRE(VerificaVelha(jogo) == -1);
 }
- 
+
+TEST_CASE("X vence na linha", "[velha]") {
+    int jogo[3][3] = {
+        {1, 1, 1},
+        {2, 2, 0},
+        {0, 0, 0}
+    };
+    REQUIRE(VerificaVelha(jogo) == 1);
+}
+
+TEST_CASE("O vence na linha", "[velha]") {
+    int jogo[3][3] = {
+        {2, 2, 2},
+        {1, 1, 0},
+        {0, 0, 0}
+    };
+    REQUIRE(VerificaVelha(jogo) == 2);
+}

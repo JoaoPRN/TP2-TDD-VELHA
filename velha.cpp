@@ -24,14 +24,14 @@ int VerificaVelha( int velha[3][3] )
             if (velha[i][j] == 0) count_vazio++;
             else if (velha[i][j] == 1) count_x++;
             else if (velha[i][j] == 2) count_o++;
-            else return -2; // valor inválido
+            else return -2; 
         }
     }
 
     if (count_vazio == 9) return -1;
     if (count_x > 5 || count_o > 5) return -2;
 
-    return 0; // tabuleiro válido
+    return 0; 
 }
 
 
