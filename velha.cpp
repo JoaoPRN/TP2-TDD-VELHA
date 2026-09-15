@@ -7,7 +7,7 @@
 
 /** 
  * @brief verifica situacao do jogo da velha  
- * @author Programador 
+ * @author João Pedro Rabelo do Nascimento 
  * @param  velha descreve o parametro
  * 
  *  Descrever o que a funcao faz
