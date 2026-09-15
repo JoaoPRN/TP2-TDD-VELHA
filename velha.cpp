@@ -58,6 +58,9 @@ int VerificaVelha( int velha[3][3] )
     if (velha[0][0] == 2 && velha[1][1] == 2 && velha[2][2] == 2) return 2;
     if (velha[0][2] == 2 && velha[1][1] == 2 && velha[2][0] == 2) return 2;
 
+    // empate
+    if (count_vazio == 0) return 0;
+
 	// jogo ainda em andamento/indefinido
     return -1; 
 }
