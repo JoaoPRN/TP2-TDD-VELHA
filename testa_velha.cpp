@@ -123,3 +123,12 @@ TEST_CASE("X e O nao alternam", "[velha]") {
 
     REQUIRE(VerificaVelha(jogo) == -2);
 }
+
+TEST_CASE("empate", "[velha]") {
+    int jogo[3][3] = {
+        {1, 2, 1},
+        {1, 2, 2},
+        {2, 1, 1}
+    };
+    REQUIRE(VerificaVelha(jogo) == 0);
+}
