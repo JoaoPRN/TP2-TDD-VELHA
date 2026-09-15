@@ -132,3 +132,23 @@ TEST_CASE("empate", "[velha]") {
     };
     REQUIRE(VerificaVelha(jogo) == 0);
 }
+
+TEST_CASE("jogo valido e ainda em andamento", "[velha]") {
+    int jogo[3][3] = {
+        {1, 2, 0},
+        {0, 1, 2},
+        {0, 0, 0}
+    };
+
+    REQUIRE(VerificaVelha(jogo) == -1);
+}
+
+TEST_CASE("valor inválido no jogo", "[velha]") {
+    int jogo[3][3] = {
+        {1, 9, 0},
+        {0, 1, 2},
+        {0, 0, 0}
+    };
+
+    REQUIRE(VerificaVelha(jogo) == -2);
+}
